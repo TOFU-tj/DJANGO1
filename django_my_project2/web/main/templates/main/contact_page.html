@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Page{% endblock %}
+
+{% block body %}
+    <div>
+        <h4>Contact</h4>
+        {% for key, value in conn.items %}
+            <h3><strong>{{ key }}: </strong> {{ value }}</h3>
+        {% endfor %}
+    </div>
+{% endblock %}

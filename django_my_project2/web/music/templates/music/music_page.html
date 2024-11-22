@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Music Page{% endblock %}
+
+{% block body %}
+    <h4 class="music-title">Music</h4>
+    <div class="music-container">
+        {% for el in music %}
+        <div class="music-item">
+            <div class="alert alert-warning">
+                {% if el.image %}
+                    <img src="{{ el.image.url }}" alt="{{ el.title }}" class="music-cover">
+                {% endif %}
+                
+                <h3>Альбом: {{ el.title }}</h3>
+                <p>Артист: {{ el.artist_name }}</p>
+                {% comment %} <p>Трек: {{ el.title }}</p> {% endcomment %}
+                
+                {% if el.link %}
+                    <a href="{{ el.link }}" class="btn btn-success">Послушать</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

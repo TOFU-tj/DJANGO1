@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Main Page{% endblock %}
+
+{% block body %}
+
+    <header>
+        <div class="navbar">
+            <div class="navbar-content">
+                <a href="{% url 'users:login' %}" class="btn">Войти</a>
+                <a href="{% url 'users:registration' %}" class="btn">Зарегистрироваться</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="welcome-container">
+        <h4 class="welcome-title">
+            Добро пожаловать на лэйбл <a href="{% url 'about' %}" class="radiant">RADIANT</a>
+        </h4>
+        <p class="welcome-subtitle">АРТИСТ:</p>
+        <p class="welcome-subtitle">TOFU</p>
+        
+        <!-- Картинка, которая только на главной странице -->
+        <section id="photo">
+            <img src="{% static 'main/img/IMG_9792.jpeg' %}" alt="Image">
+        </section>
+    </div>
+    <img src="{% static 'main/img/radiant copy.png' %}" alt="Лейбл RADIANT" class="about-image">
+{% endblock %}

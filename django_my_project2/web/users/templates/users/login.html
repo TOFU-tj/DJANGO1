@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Вход{% endblock %}
+
+{% block body %}
+<div class="login-container">
+    <h2>Вход</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}  <!-- Отобразить поля формы -->
+        </div>
+        <button class="btn-success" type="submit">Войти</button>
+    </form>
+    <p>Нет аккаунта? <a href="{% url 'users:registration' %}">Зарегистрируйтесь здесь</a>.</p>
+    <img src="{% static 'main/img/radiant copy.png' %}" alt="Лейбл RADIANT" class="about-image">
+</div>
+{% endblock %}

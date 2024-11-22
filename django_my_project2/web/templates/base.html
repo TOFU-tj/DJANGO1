@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TOFU{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+
+    {% comment %} <header>
+        <div class="navbar">
+            <div class="navbar-content">
+                <a href="{% url 'users:login' %}" class="btn">Войти</a>
+                <a href="{% url 'users:registration' %}" class="btn">Зарегистрироваться</a>
+            </div>
+        </div>
+    </header> {% endcomment %}
+
+    <!-- Блок для сообщений -->
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <!-- Кнопка для открытия сайдбара -->
+    <button id="toggle-btn">☰</button>
+
+    <!-- Сайдбар -->
+    <aside id="sidebar">
+        <div id="logo">
+            <img src="{% static 'main/img/radiant copy.png' %}" alt="Radiant Logo">
+        </div>
+        <ul>
+            <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">
+                <i class="fa fa-home"></i> Main Page</a></li>
+            <li><a href="{% url 'merch' %}" class="{% if request.path == '/merch/' %}active{% endif %}">
+                <i class="fa fa-shopping-cart"></i> Merch</a></li>
+            <li><a href="{% url 'con' %}" class="{% if request.path == '/con/' %}active{% endif %}">
+                <i class="fa fa-envelope"></i> Contacts</a></li>
+            <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">
+                <i class="fa fa-info-circle"></i> About Us</a></li>
+            <li><a href="{% url 'music' %}" class="{% if request.path == '/music/' %}active{% endif %}">
+                <i class="fa fa-music"></i> New Music</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="content">
+            {% block body %}
+            {% endblock %}
+        </div>
+    </main>
+    
+    <script src="{% static 'main/js/script.js' %}"></script>
+</body>
+</html>

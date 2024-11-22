@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{%block title%}Merch Page{%endblock%}
+
+
+{%block body%}
+    <div>
+        <h4> Merch </h4>
+    
+
+        <header>
+            <div class="navbar">
+                <div class="navbar-content">
+                    <a href="{% url 'users:login' %}" class="btn">Войти</a>
+                    <a href="{% url 'users:registration' %}" class="btn">Зарегистрироваться</a>
+                </div>
+            </div>
+        </header>
+    </div>
+{%endblock%}

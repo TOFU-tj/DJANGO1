@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block body %}
+<div class="registration-container">
+    <h2>Регистрация</h2>
+    
+    <!-- Проверка наличия ошибок в форме -->
+    {% if form.errors %}
+        <div class="messages error">
+            Пожалуйста, исправьте ошибки в форме.
+        </div>
+    {% endif %}
+    
+    <form method="post" enctype="multipart/form-data">  <!-- Для загрузки файлов нужно добавить enctype -->
+        {% csrf_token %}
+        
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        
+        <button class="btn-success" type="submit">Зарегистрироваться</button>
+    </form>
+    <img src="{% static 'main/img/radiant copy.png' %}" alt="Лейбл RADIANT" class="about-image">
+</div>
+{% endblock %}

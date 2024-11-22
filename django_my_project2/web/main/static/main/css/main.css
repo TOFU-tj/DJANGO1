@@ -1,0 +1,591 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #000, #222); /* Градиентный фон */
+    color: #fff;
+}
+
+.active {
+    font-weight: bold; /* Жирный шрифт для активной ссылки */
+    color: red; /* Цвет для выделения активной ссылки */
+}
+
+.welcome-container {
+    text-align: center; /* Центрируем текст */
+    margin: 20px; /* Отступы */
+}
+
+.welcome-title {
+    font-size: 36px; /* Размер заголовка */
+    color: #fff; /* Белый текст */
+}
+
+.radiant {
+    color: red; /* Красный цвет для RADIANT */
+    font-weight: bold; /* Жирный шрифт */
+    transition: transform 0.3s ease; /* Плавный переход для увеличения */
+}
+
+.radiant:hover {
+    transform: scale(1.2); /* Увеличение при наведении */
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.welcome-subtitle {
+    font-size: 24px; /* Размер подзаголовка */
+    color: #ccc; /* Светло-серый текст */
+    margin: 5px 0; /* Отступы сверху и снизу */
+}
+
+/* Кнопка для открытия сайдбара */
+#toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#toggle-btn:hover {
+    background-color: #555;
+}
+
+/* Сайдбар */
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    padding-top: 50px;
+    transform: translateX(-250px); /* Скрываем сайдбар по умолчанию */
+    transition: transform 0.3s ease-in-out; /* Анимация плавного выезда */
+}
+
+
+#sidebar ul {
+    padding-top: 20px;
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+#sidebar ul li {
+    padding: 15px 0;
+}
+
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+/* Эффект при наведении */
+#sidebar ul li a:hover {
+    color: #ff0000; /* Цвет текста при наведении */
+    transform: scale(1.1); /* Немного увеличиваем текст */
+}
+
+/* Значки перед текстом (Font Awesome или другой набор) */
+#sidebar ul li a i {
+    font-size: 20px; /* Размер иконок */
+}
+
+/* Основной контент */
+main {
+    margin-left: 150px; /* Оставляем место для сайдбара */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Центрируем контент по горизонтали */
+    padding: 20px;
+    min-height: 100vh; /* Контейнер занимает всю высоту экрана */
+}
+
+
+/* Секция Tofu */
+#tofu h2 {
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 5px;
+}
+
+
+/* Секция с изображением */
+#photo img {
+    display: block;
+    width: 80vw; /* Занимает 80% ширины экрана */
+    height: 80vh; /* Занимает 80% высоты экрана */
+    object-fit: cover; /* Обеспечивает масштабирование без искажения */
+    margin: 0 auto; /* Центрирование изображения */
+    border-radius: 10px; /* Немного скруглим углы */
+}
+
+/* Секция About Us */
+#about {
+    padding: 50px;
+    background-color: #222; /* Более светлый фон для секции */
+    text-align: center;
+    border-radius: 8px; /* Скругленные углы */
+}
+
+.about-container {
+    text-align: center; /* Центрирование текста */
+}
+
+.about-image {
+    display: block;
+    margin: 15px auto; /* Центрирование изображения и добавление отступов сверху и снизу */
+    max-width: 100%; /* Ограничиваем ширину изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+    border-radius: 10px; /* Можно добавить скругление углов для красоты */
+}
+
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff; /* Цвет заголовка */
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ccc;
+}
+.music-container {
+    background-color: #2c2c2c68; /* Темно-серый фон */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 8px; /* Закругленные углы */
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрирование по горизонтали с отступами сверху и снизу */
+    display: flex; /* Используем flexbox */
+    flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+    justify-content: center; /* Центрируем элементы в строке */
+}
+
+.music-item {
+    background-color: #3a3a3a; /* Более светлый серый фон для каждого элемента */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 15px; /* Внутренние отступы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для выделения */
+    color: #fff; /* Белый текст для контраста */
+    display: flex; /* Используем flexbox для элементов внутри */
+    flex-direction: column; /* Вертикальное направление для контента */
+    align-items: center; /* Центрируем элементы внутри */
+    gap: 10px; /* Промежуток между изображением и текстом */
+    width: calc(48% - 10px); /* Ширина элемента (2 в строке с отступом) */
+    margin-bottom: 20px; /* Отступ снизу между рядами */
+}
+
+.music-cover {
+    max-width: 100%; /* Ограничиваем ширину изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+}
+
+.music-title {
+    font-size: 2em; /* Увеличенный размер шрифта для заголовка */
+    font-weight: bold; /* Жирный шрифт */
+    text-align: center; /* Центрирование текста */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.btn-success {
+    background-color: green; /* Зеленый фон для кнопки */
+    color: white; /* Белый текст */
+    padding: 10px 15px; /* Отступы кнопки */
+    text-decoration: none; /* Убираем подчеркивание */
+    border-radius: 5px; /* Закругленные углы */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход цвета и размера */
+}
+
+.btn-success:hover {
+    background-color: darkgreen; /* Более темный зеленый при наведении */
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+}
+
+#logo {
+    text-align: center;
+    margin-bottom: 20px; /* Отступ снизу, чтобы отделить от меню */
+}
+
+#logo img {
+    width: 200px; /* Увеличиваем ширину логотипа */
+    height: auto; /* Сохраняем пропорции */
+    border-radius: 15px; /* Немного больше скруглим углы */
+}
+.about-container {
+    text-align: center; /* Центрирование текста */
+}
+
+.about-image {
+    display: block;
+    margin: 0 auto; /* Центрирование изображения */
+    max-width: 200px; 
+    height: auto; /* Сохраняем пропорции */
+}
+
+.about-text {
+    font-size: 1.5em; /* Увеличиваем размер текста */
+    line-height: 1.6; /* Улучшаем читаемость */
+    margin: 15px 0; /* Отступы между абзацами */
+    color: #ccc; /* Цвет текста */
+}
+
+#toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #444; /* Более светлый цвет */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px; /* Скругленные углы */
+    transition: background-color 0.3s; /* Плавный переход */
+}
+
+#toggle-btn:hover {
+    background-color: #666; /* Более светлый цвет при наведении */
+}
+
+.registration-container {
+    max-width: 500px; /* Максимальная ширина контейнера */
+    margin: 50px auto; /* Центрирование по горизонтали и отступ сверху */
+    padding: 30px; /* Внутренние отступы */
+    background-color: rgba(44, 44, 44, 0.8); /* Полупрозрачный фон */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень для выделения */
+    color: #fff; /* Цвет текста */
+}
+
+.registration-container h2 {
+    text-align: center; /* Центрируем заголовок */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Отступ между полями формы */
+}
+
+.form-group label {
+    display: block; /* Отображаем метки в блоке */
+    margin-bottom: 5px; /* Отступ снизу */
+}
+
+.form-group input {
+    width: 100%; /* Ширина 100% */
+    padding: 10px; /* Внутренние отступы */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 5px; /* Закругленные углы */
+    background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон для полей ввода */
+    color: #fff; /* Цвет текста */
+    transition: background-color 0.3s; /* Плавный переход фона */
+}
+
+.form-group input:focus {
+    background-color: rgba(255, 255, 255, 0.2); /* Более светлый фон при фокусе */
+}
+
+.btn-success {
+    width: 100%; /* Кнопка занимает 100% ширины */
+    padding: 10px; /* Отступы кнопки */
+    background-color: green; /* Зеленый фон для кнопки */
+    color: white; /* Белый текст */
+    border: none; /* Убираем стандартную рамку */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Курсор указывает на интерактивность */
+    transition: background-color 0.3s, transform 0.3s; /* Плавный переход цвета и размера */
+}
+
+.btn-success:hover {
+    background-color: darkgreen; /* Более темный зеленый при наведении */
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
+}
+
+p {
+    text-align: center; /* Центрируем текст */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+p a {
+    color: #ffcc00; /* Цвет для ссылки */
+    text-decoration: underline; /* Подчеркивание для ссылок */
+}
+
+ 
+/* Стили для навигационной панели */
+.navbar {
+    position: absolute; /* Фиксируем в правом верхнем углу */
+    top: 10px; /* Отступ сверху */
+    right: 10px; /* Отступ справа */
+    z-index: 1000; /* Убедимся, что панель сверху */
+}
+
+.navbar-content {
+    display: flex;
+    gap: 10px; /* Промежуток между кнопками */
+}
+
+.btn {
+    display: inline-block; /* Блок для кнопок */
+    padding: 10px 20px; /* Отступы */
+    background-color: rgba(255, 255, 255, 0.2); /* Полупрозрачный фон */
+    color: white; /* Белый текст */
+    border-radius: 5px; /* Скругленные углы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: transform 0.3s ease; /* Плавный переход для увеличения */
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+    background-color: rgba(255, 255, 255, 0.4); /* Более светлый фон при наведении */
+}
+
+/* Стили для сообщений */
+.messages {
+    list-style-type: none;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.messages li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.messages li:last-child {
+    border-bottom: none;
+}
+
+.messages .success {
+    color: green;
+}
+
+.messages .error {
+    color: red;
+}
+
+
+
+/* Контейнер формы авторизации */
+.login-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: rgba(44, 44, 44, 0.85); /* Более тёмный и элегантный фон */
+    border-radius: 15px; /* Более выраженные скруглённые углы */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Глубокая тень */
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out; /* Плавный переход для тени */
+}
+
+.login-container:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Увеличенная тень при наведении */
+}
+
+h2 {
+    font-size: 2rem; /* Увеличенный размер шрифта */
+    margin-bottom: 20px;
+    color: #ffcc00; /* Яркий заголовок */
+    text-transform: uppercase; /* Заглавные буквы для акцента */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: rgba(255, 255, 255, 0.3); /* Ещё более светлый фон при фокусе */
+    transform: scale(1.02); /* Лёгкое увеличение */
+    outline: none; /* Убираем стандартное выделение браузера */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Эффект свечения */
+}
+
+input[type="file"] {
+    color: #fff;
+    cursor: pointer; /* Указываем, что это интерактивный элемент */
+}
+
+.btn-success {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Более приятный зелёный */
+    color: rgb(255, 183, 0);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Тёмный зелёный при наведении */
+    transform: scale(1.05); /* Немного увеличивается при наведении */
+    box-shadow: 0 5px 15px rgba(33, 136, 56, 0.4); /* Тень при наведении */
+}
+
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+p a {
+    color: #ffcc00;
+    text-decoration: none; /* Убираем стандартное подчеркивание ссылок */
+    transition: color 0.3s ease-in-out;
+}
+
+p a:hover {
+    color: #ffc107; /* Ещё более яркий цвет при наведении */
+}
+
+/* Контейнер формы авторизации */
+.login-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: rgba(34, 34, 34, 0.95); /* Темный, почти непрозрачный фон */
+    border-radius: 10px; /* Менее выраженные углы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Мягкая тень */
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Увеличение тени при наведении */
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #ddd; /* Нейтральный светло-серый цвет */
+    text-transform: none; /* Обычное написание, без заглавных */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555; /* Тонкая серая рамка */
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05); /* Очень лёгкий фон */
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Чуть светлее при фокусе */
+    transform: scale(1.02); /* Лёгкое увеличение */
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15); /* Едва заметное свечение */
+}
+
+input[type="file"] {
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-success {
+    width: 100%;
+    padding: 12px;
+    background-color: #028700; /* Нейтральный тёмно-серый */
+    color: #fff;
+    border: 1px solid #707070; /* Тонкая граница */
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #1ca806; /* Ещё более тёмный оттенок при наведении */
+    transform: scale(1.05); /* Лёгкое увеличение */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Тень при наведении */
+}
+
+p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bbb; /* Светло-серый для текста */
+}
+
+p a {
+    color: #f5b904; /* Тот же серый цвет */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+p a:hover {
+    color: #ff8800; /* Белый при наведении */
+}
+
+/* Контейнер для регистрации */
+.registration-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: rgba(34, 34, 34, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #ff3333;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.registration-container:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.registration-container h2 {
+    font-size: 1.8rem;
+    color: #ddd; /* Тот же светло-серый */
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: none;
+}
+
+.messages.error {
+    background-color: rgba(255, 0, 0, 0.1); /* Лёгкий оттенок красного для ошибок */
+    color: #cc0000; /* Тёмно-красный */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
